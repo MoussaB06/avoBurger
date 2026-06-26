@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+// 🔑 Identifiants de démo (pré-remplis pour les visiteurs / recruteurs)
+const DEMO_EMAIL = 'admin@avoburger.com'
+const DEMO_PASSWORD = 'demo1234'
+
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState(DEMO_EMAIL)
+  const [password, setPassword] = useState(DEMO_PASSWORD)
   const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
@@ -58,9 +62,22 @@ function Login() {
           <h1 className="text-2xl font-semibold text-zinc-900 mb-1">
             Sign into Avoburger admin
           </h1>
-          <p className="text-sm text-zinc-500 mb-8">
+          <p className="text-sm text-zinc-500 mb-6">
             Please enter your details below to sign in
           </p>
+
+          {/* 🔑 Bandeau démo */}
+          <div className="mb-6 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm">
+            <p className="font-medium text-green-700 mb-1">👋 Demo access</p>
+            <p className="text-green-700/80 leading-relaxed">
+              Credentials are pre-filled — just click{' '}
+              <span className="font-medium">Sign in</span>.
+            </p>
+            <div className="mt-2 text-xs text-green-700/70 font-mono">
+              <div>email: {DEMO_EMAIL}</div>
+              <div>password: {DEMO_PASSWORD}</div>
+            </div>
+          </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
