@@ -17,7 +17,7 @@ function Sidebar() {
   }
 
   return (
-    <aside className="w-64 h-screen bg-zinc-900 flex flex-col py-6 px-3 fixed left-0 top-0">
+    <aside className="w-64 h-screen bg-zinc-800 flex flex-col py-6 px-3 fixed left-0 top-0">
       <div className="flex items-center gap-2 px-3 mb-8">
         <span className="text-xl">🥑</span>
         <span className="text-white font-semibold">AvoBurger</span>
